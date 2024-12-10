@@ -5,7 +5,13 @@ export default class OrigamidService {
 
 	static async getProducts(): Promise<Product[]> {
 		const response = await fetch('https://api.origamid.online/produtos')
-		const data = await response.json() as Product[]
-		return data
+		const products = await response.json() as Product[]
+		return products
+	}
+
+	static async getProductById(id: number | string): Promise<Product> {
+		const response = await fetch(`https://api.origamid.online/produtos/${String(id)}`)
+		const product = await response.json() as Product
+		return product
 	}
 }

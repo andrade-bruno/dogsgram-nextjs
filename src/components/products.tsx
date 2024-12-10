@@ -1,4 +1,5 @@
 import { Product } from "@/interfaces/product";
+import Link from "next/link";
 
 interface ProductsProps {
 	products: Product[]
@@ -8,7 +9,9 @@ export default function Products({products}: ProductsProps) {
 	return (
 		<ol>
 			{products.map(item => (
-				<li key={item.id}>{item.nome}</li>
+				<Link href={`products/${item.id}`} key={item.id}>
+					<li>{item.nome}</li>
+				</Link>
 			))}
 		</ol>
 	)
