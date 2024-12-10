@@ -1,16 +1,14 @@
-import { Product } from "@/interfaces/product"
+import OrigamidService from "@/services/origamid"
+import Products from "./products"
 
 export default async function ServerFetch() {
-	const response = await fetch('http://api.origamid.online/produtos')
-	const data = await response.json() as Product[]
+	const products = await OrigamidService.getProducts()
+
 	return (
 		<>
 			<p>Server Fetch Side Example</p>
-			<ol>
-				{data.map(item => (
-					<li key={item.id}>{item.nome}</li>
-				))}
-			</ol>
+			<b>This fetch method use cache. If you reload page, the request won't be handled again.</b>
+			<Products products={products}/>
 		</>
 	)
 }
