@@ -17,6 +17,7 @@ html {
 
 body {
   margin: 1.5rem;
+  padding: 5rem;
 }
 
 body,
@@ -122,6 +123,10 @@ img {
   display: block;
 }
 
+a {
+  text-decoration: none;
+}
+
 .flex {
   display: flex;
   gap: 1rem;
@@ -132,4 +137,5 @@ img {
   gap: 1.5rem;
   list-style: none;
   padding: 0;
+  margin: 0 0 2.5em 0;
 }
