@@ -1,6 +1,6 @@
 'use client'
 
-import { Product } from "@/interfaces/product"
+import { Product } from "@/interfaces/api/product"
 import OrigamidService from "@/services/origamid"
 import React from "react"
 import Products from "./products"

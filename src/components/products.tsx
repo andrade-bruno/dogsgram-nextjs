@@ -1,4 +1,4 @@
-import { Product } from "@/interfaces/product";
+import { Product } from "@/interfaces/api/product";
 import Link from "next/link";
 
 interface ProductsProps {
