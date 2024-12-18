@@ -10,7 +10,7 @@ export default function ClientFetch() {
 
 	React.useEffect(() => {
 		async function fetchData() {
-			const data = await OrigamidService.getProducts()
+			const data = await new OrigamidService().getProducts()
 			setProducts(data)
 		}
 		fetchData()

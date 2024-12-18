@@ -2,7 +2,7 @@ import OrigamidService from "@/services/origamid"
 import Products from "./products"
 
 export default async function ServerFetch() {
-	const products = await OrigamidService.getProducts()
+	const products = await new OrigamidService().getProducts()
 
 	return (
 		<>
