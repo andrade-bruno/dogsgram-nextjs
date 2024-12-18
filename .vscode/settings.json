@@ -1,16 +1,16 @@
 {
   "git.enabled": true,
   "files.exclude": {
-    "node_modules": true,
-    ".vscode": true,
-    ".gitignore": true,
+    "node_modules": false,
+    ".vscode": false,
+    ".gitignore": false,
     "package.json": false,
-    "package-lock.json": true,
-		"yarn.lock": true,
-    ".eslintrc*": true,
-    "tsconfig.*": true,
-    "next-env.d.ts": true,
-    "next.config.ts": true,
-    "README.md": true
+    "package-lock.json": false,
+		"yarn.lock": false,
+    ".eslintrc*": false,
+    "tsconfig.*": false,
+    "next-env.d.ts": false,
+    "next.config.ts": false,
+    "README.md": false
   }
 }
