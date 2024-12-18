@@ -2,7 +2,7 @@ import OrigamidService from "@/services/origamid"
 import Link from "next/link"
 
 export default async function CoursesPage() {
-	const courses = await OrigamidService.getCourses()
+	const courses = await new OrigamidService().getCourses()
 
 	return (
 		<>
@@ -16,7 +16,7 @@ export default async function CoursesPage() {
 					return (
 						<Link
 							key={course.id}
-							href={`/courses/${course.slug}/${course.descricao}/${course.id}`}
+							href={`/courses/${course.slug}/`}
 						>
 							<li>{course.nome}</li>
 						</Link>
