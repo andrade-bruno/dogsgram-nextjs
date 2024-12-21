@@ -1,4 +1,6 @@
+import DynamicRouteCounter from "@/components/dynamic-route-counter"
 import OrigamidService from "@/services/origamid"
+import Link from "next/link"
 
 interface CoursePageProps {
 	params: {
@@ -9,22 +11,46 @@ interface CoursePageProps {
 export default async function CoursePage({params}: CoursePageProps) {
 	const { attr } = await params
 
-	const slug = String(attr[0])
-	const { aulas } = await new OrigamidService().getCourseBySlug(slug)
+	const attributes = attr.length
+
+	const courseDescription = String(attr[0])
+	const { aulas, descricao } = await new OrigamidService().getCourseBySlug(courseDescription)
 	
-	return (
-		<>
-			<h2>Course</h2>
-			<hr/>
-			<p>This is a dynamic route with multiple params</p>
-			<p>Received following <b>{attr.length}</b> item(s) in route params:</p>
-			<ol>
-				{attr.map(item => {
-					return (
-						<li key={Math.random()}>{item}</li>
-					)
-				})}
-			</ol>
-		</>
-	)
+	if (attributes == 1) {
+		return (
+			<>
+				<h2>"{descricao}" Course</h2>
+				<hr/>
+				<DynamicRouteCounter attr={attr}/>
+				<p>Estas são as aulas de {descricao}</p>
+				<ul>
+					{aulas.map(aula => {
+						return (
+							<li key={Math.random()}>
+								<Link href={`/courses/${courseDescription}/${aula.slug}`}>{aula.descricao}</Link>
+							</li>
+						)
+					})}
+				</ul>
+			</>
+		)
+	}
+	else if (attributes == 2) {
+		const { descricao, tempo,  } = aulas.find(aula => aula.slug == attr[1])!!
+
+		return (
+			<>
+				<h2>Lesson "{descricao}"</h2>
+				<hr/>
+				<DynamicRouteCounter attr={attr}/>
+				<h3>Information</h3>
+				<p>Duration: {tempo} min(s)</p>
+			</>
+		)
+	}
+	else {
+		return (
+			<></>
+		)
+	}
 }
