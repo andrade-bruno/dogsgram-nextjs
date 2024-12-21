@@ -2,7 +2,7 @@ import Products from "@/components/products";
 import OrigamidService from "@/services/origamid";
 
 export default async function ProductsPage() {
-	const products = await OrigamidService.getProducts()
+	const products = await new OrigamidService().getProducts()
 	return (
 		<main>
 			<h2>Products</h2>

@@ -8,7 +8,7 @@ interface ProductPageProps {
 
 export default async function ProductPage({ params }: ProductPageProps) {
 	const { id } = await params // https://nextjs.org/docs/messages/sync-dynamic-apis
-	const product = await OrigamidService.getProductById(id)
+	const product = await new OrigamidService().getProductById(id)
 	const { nome, descricao, estoque: qtdEstoque, importado, preco } = product
 
 	return (
