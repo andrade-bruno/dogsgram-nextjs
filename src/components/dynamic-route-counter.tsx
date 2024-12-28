@@ -1,4 +1,4 @@
-export default function DynamicRouteCounter({attr}: {attr: Array<any>}) {
+export default function DynamicRouteCounter({attr}: {attr: Array<string>}) {
 	return (
 		<>
 			<p>This is a dynamic route with multiple params</p>

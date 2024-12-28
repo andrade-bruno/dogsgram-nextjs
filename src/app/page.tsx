@@ -1,4 +1,3 @@
-import ServerFetch from "@/components/server-fetch";
 
 export default function Homepage() {
   return (

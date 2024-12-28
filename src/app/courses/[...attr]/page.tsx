@@ -35,8 +35,8 @@ export default async function CoursePage({params}: CoursePageProps) {
 			</>
 		)
 	}
-	else if (attributes == 2) {
-		const { descricao, tempo,  } = aulas.find(aula => aula.slug == attr[1])!!
+	else {
+		const { descricao, tempo } = aulas.find(aula => aula.slug == attr[1])!
 
 		return (
 			<>
@@ -46,11 +46,6 @@ export default async function CoursePage({params}: CoursePageProps) {
 				<h3>Information</h3>
 				<p>Duration: {tempo} min(s)</p>
 			</>
-		)
-	}
-	else {
-		return (
-			<></>
 		)
 	}
 }
