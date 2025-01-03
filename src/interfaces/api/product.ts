@@ -1,5 +1,7 @@
+import { ID } from "./misc";
+
 export interface Product {
-	id: number,
+	id: ID,
 	nome: string,
 	preco: number,
 	descricao: string,

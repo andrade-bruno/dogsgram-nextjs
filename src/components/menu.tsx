@@ -10,6 +10,7 @@ export default function Menu() {
 			<li><Link href="/fetch-examples">Fetch Examples</Link></li>
 			<li><Link href="/products">Products</Link></li>
 			<li><Link href="/courses">Courses</Link></li>
+			<li><Link href="/actions">Actions</Link></li>
 		</ul>
 	)
 }

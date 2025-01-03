@@ -1,5 +1,7 @@
+import { ID } from "./misc";
+
 export interface Lesson {
-	id: number;
+	id: ID;
 	slug: string;
 	nome: string;
 	descricao: string;

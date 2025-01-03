@@ -1,4 +1,4 @@
-import { GetCourseBySlugResponse, ID, IOrigamidService } from "@/interfaces/api"
+import { Action, GetCourseBySlugResponse, ID, IOrigamidService } from "@/interfaces/api"
 import { Course } from "@/interfaces/api/course"
 import { Product } from "@/interfaces/api/product"
 
@@ -29,5 +29,15 @@ export default class OrigamidService implements IOrigamidService {
 		const response = await fetch(`${this.domain}/cursos/${slug}`)
 		const course = await response.json() as GetCourseBySlugResponse
 		return course
+	}
+
+	async getActions(): Promise<Action[]> {
+		const response = await fetch(`${this.domain}/acoes`)
+		return await response.json() as Action[]
+	}
+
+	async getActionByCode(code: string, options?: RequestInit): Promise<Action> {
+		const response = await fetch(`${this.domain}/acoes/${code}`, options)
+		return await response.json() as Action
 	}
 }
