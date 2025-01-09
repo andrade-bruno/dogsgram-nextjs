@@ -1,6 +1,6 @@
-import { ID } from "./misc"
+import { ID } from "../misc";
 
-export type Action = {
+export interface Action {
 	id: ID;
 	preco_anterior: number;
 	preco: number;

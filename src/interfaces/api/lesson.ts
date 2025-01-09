@@ -1,4 +1,4 @@
-import { ID } from "./misc";
+import { ID } from "../misc";
 
 export interface Lesson {
 	id: ID;
