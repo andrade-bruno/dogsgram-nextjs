@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint:next": "next lint",
-    "lint": "yarn run eslint eslint.config.js"
+    "lint": "yarn run eslint eslint.config.mjs"
   },
   "dependencies": {
     "next": "15.0.3",
@@ -22,6 +22,7 @@
     "@types/react-dom": "^18",
     "eslint": "^9.17.0",
     "eslint-config-next": "15.0.3",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react": "^7.37.3",
     "globals": "^15.14.0",
     "typescript": "^5",
