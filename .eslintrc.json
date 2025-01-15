@@ -8,6 +8,5 @@
     "no-unused-vars": "warn",
     "eslint-plugin-vue/comma-dangle": "warn",
     "no-undef": "warn"
-    // "@next/next/no-page-custom-font": "off"
   }
 }
