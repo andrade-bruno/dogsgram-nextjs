@@ -1,6 +1,7 @@
 import { ID } from "@/interfaces";
 import {
   Action,
+  Animal,
   GetCourseBySlugResponse,
   IOrigamidService,
   LoginDTO,
@@ -58,5 +59,12 @@ export default class OrigamidService implements IOrigamidService {
   async getActionByCode(code: string, options?: RequestInit): Promise<Action> {
     const response = await fetch(`${this.domain}/acoes/${code}`, options);
     return (await response.json()) as Action;
+  }
+
+  async getAnimals(): Promise<Animal[]> {
+    const response = await fetch(`${this.domain}/animais`, {
+      cache: "no-store",
+    });
+    return (await response.json()) as Animal[];
   }
 }
