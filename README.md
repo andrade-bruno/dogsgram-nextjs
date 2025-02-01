@@ -8,4 +8,4 @@ Here we can follow step by step examples from real world usage of main features
 
 The course also provides a final system, with React converted to NextJS
 
-[Bruno's Repository](https://https://github.com/andrade-bruno/dogsgram)
+[Bruno's Repository](https://github.com/andrade-bruno/dogsgram)
